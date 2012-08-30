@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?compositeArtifactRepository version='1.0.0'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler">
+  <st:contentType value="application/xml;charset=UTF-8"/>
+  <repository name='Jenkins Update Site at ${app.rootUrl}'
+      type='org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository' version='1.0.0'>
+    <properties size='1'>
+      <property name='p2.timestamp' value='${it.timestamp}'/>
+    </properties>
+    <children size='${it.children.size()}'>
+      <j:forEach var="p" items="${it.children}">
+        <child location='../plugin/${p.shortName}/eclipse.site/'/>
+      </j:forEach>
+    </children>
+  </repository>
+</j:jelly>
