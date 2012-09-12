@@ -3,6 +3,7 @@ package org.jenkinsci.plugins.eclipseUpdateSite;
 import hudson.Extension;
 import hudson.PluginWrapper;
 import hudson.model.RootAction;
+import hudson.model.UnprotectedRootAction;
 import jenkins.model.Jenkins;
 import org.apache.commons.io.IOUtils;
 
@@ -17,7 +18,7 @@ import java.util.List;
  * @author Kohsuke Kawaguchi
  */
 @Extension
-public class EclipseUpdateSite implements RootAction {
+public class EclipseUpdateSite implements UnprotectedRootAction {
     public long timestamp = -1;
 
     public long getTimestamp() {
