@@ -1,0 +1,5 @@
+<j:jelly xmlns:j="jelly:core">
+version = 1
+metadata.repository.factory.order = compositeContent.xml,\!
+artifact.repository.factory.order = compositeArtifacts.xml,\!
+</j:jelly>
